@@ -1,0 +1,26 @@
+<idea-plugin>
+    <id>org.yzz.generate.json-generate-entity</id>
+    <name>JsonGeneratePOJO</name>
+    <vendor email="yangzhouyq@outlook.com" url="https://github.com/yangzhoucyl">yangzhou</vendor>
+
+    <description>这是个简单的plugin例子，包括了action、service的配置及使用的示例代码</description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="org.yzz.generate.service.impl.ApplicationServiceImpl"
+            serviceInterface="org.yzz.generate.service.ApplicationService" id="applicationService"/>
+        <projectService serviceImplementation="org.yzz.generate.service.impl.ProjectServiceImpl"
+                        serviceInterface="org.yzz.generate.service.ProjectService" id="projectService"/>
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <action class="org.yzz.generate.action.Action" id="testAction" text="TestAction" description="Action实例">
+            <add-to-group group-id="BuildMenu" anchor="first"/>
+        </action>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
